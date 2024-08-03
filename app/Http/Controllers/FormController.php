@@ -31,6 +31,12 @@ class FormController extends Controller
         $envService->set("MAIL_USERNAME", $request->mail_username);
         $envService->set("MAIL_PASSWORD", $request->mail_password);
         $envService->set("MAIL_ENCRYPTION", $request->mail_encryption);
+        // $envService->set("DB_DATABASE", $request->db_database);
+        // $envService->set("DB_USERNAME", $request->db_username);
+        // $envService->set("DB_PASSWORD", $request->db_password);
+        // $envService->set("DB_CONNECTION", $request->db_connection);
+        // $envService->set("DB_HOST", $request->db_host);
+        // $envService->set("DB_PORT", $request->db_port);
         // $envService->set("MY_APP_NAME", "My Laravel Application");
 
         // php artisan souldoit:set-env "MY_APP_NAME=My Laravel Application"

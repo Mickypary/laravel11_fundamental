@@ -13,7 +13,7 @@
     .container {
       width: 100%;
       margin: 60px auto;
-      max-width: 300px;
+      max-width: 500px;
       background-color: rgba(137, 178, 190, 0.271);
       padding: 20px;
     }
@@ -36,46 +36,90 @@
       margin-top: 0.4rem;
       background-color: aqua
     }
+
+    .flex {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap
+    }
   </style>
 </head>
 <body>
 
   <form action="{{ route('form') }}" class="container" method="post">
     @csrf
-    <label>Mail Mailer</label>
-    <div>
-      {{-- <input type="text" name="mail_mailer" value="{{ env('MAIL_MAILER') }}"> --}}
-      <input type="text" class="form-control" name="mail_mailer" value="<?= $_ENV['MAIL_MAILER'] ?>">
-    </div>
+    <div class="">
+        <div>
+          <label>Mail Mailer</label>
+          <div>
+            {{-- <input type="text" name="mail_mailer" value="{{ env('MAIL_MAILER') }}"> --}}
+            <input type="text" class="form-control" name="mail_mailer" value="<?= $_ENV['MAIL_MAILER'] ?>">
+          </div>
+    
+          <label>Mail Host</label>
+          <div>
+            <input type="text" class="form-control" name="mail_host" value="{{ env('MAIL_HOST') }}">
+          </div>
+    
+          <label>Mail Port</label>
+          <div>
+            <input type="text" class="form-control" name="mail_port" value="{{ env('MAIL_PORT') }}">
+          </div>
+    
+          <label>Mail Username</label>
+          <div>
+            <input type="text" class="form-control" name="mail_username" value="{{ env('MAIL_USERNAME') }}">
+          </div>
+    
+          <label>Mail Password</label>
+          <div>
+            <input type="text" class="form-control" name="mail_password" value="{{ env('MAIL_PASSWORD') }}">
+          </div>
+    
+          <label>Mail Encryption</label>
+          <div>
+            <input type="text" class="form-control" name="mail_encryption" value="{{ env('MAIL_ENCRYPTION') }}">
+          </div>
+        </div>
 
-    <label>Mail Host</label>
-    <div>
-      <input type="text" class="form-control" name="mail_host" value="{{ env('MAIL_HOST') }}">
+      {{-- <div>
+        <label>DB Name</label>
+        <div>
+          <input type="text" class="form-control" name="db_database" value="<?= $_ENV['DB_DATABASE'] ?>">
+        </div>
+    
+        <label>DB Username</label>
+        <div>
+          <input type="text" class="form-control" name="db_username" value="{{ env('DB_USERNAME') }}">
+        </div>
+    
+        <label>DB Password</label>
+        <div>
+          <input type="text" class="form-control" name="db_password" value="{{ env('DB_PASSWORD') }}">
+        </div>
+    
+        <label>DB Host</label>
+        <div>
+          <input type="text" class="form-control" name="db_host" value="{{ env('DB_HOST') }}">
+        </div>
+    
+        <label>DB Port</label>
+        <div>
+          <input type="text" class="form-control" name="db_port" value="{{ env('DB_PORT') }}">
+        </div>
+    
+        <label>DB Connection</label>
+        <div>
+          <input type="text" class="form-control" name="db_connection" value="{{ env('DB_CONNECTION') }}">
+        </div>
+        </div> --}}
+      
+  
+        <div>
+          <input type="submit" class="btn" name="submit" value="Update">
+        </div>
     </div>
-
-    <label>Mail Port</label>
-    <div>
-      <input type="text" class="form-control" name="mail_port" value="{{ env('MAIL_PORT') }}">
-    </div>
-
-    <label>Mail Username</label>
-    <div>
-      <input type="text" class="form-control" name="mail_username" value="{{ env('MAIL_USERNAME') }}">
-    </div>
-
-    <label>Mail Password</label>
-    <div>
-      <input type="text" class="form-control" name="mail_password" value="{{ env('MAIL_PASSWORD') }}">
-    </div>
-
-    <label>Mail Encryption</label>
-    <div>
-      <input type="text" class="form-control" name="mail_encryption" value="{{ env('MAIL_ENCRYPTION') }}">
-    </div>
-
-    <div>
-      <input type="submit" class="btn" name="submit" value="Update">
-    </div>
+    
 
 
   </form>
