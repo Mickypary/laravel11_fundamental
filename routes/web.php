@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Calculate;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\FormController;
 use App\Http\Middleware\CheckPrice;
 
 // Route::get('/', function () {
@@ -34,6 +35,8 @@ Route::post('store', [StudentController::class, 'store'])->name('store');
 
 Route::get('check/{mark}', [Calculate::class, 'get_result'])->name('result');
 Route::get('send-email', [EmailController::class, 'sendEmail'])->name('send.email');
+Route::get('form', [FormController::class, 'form_test']);
+Route::post('form_update', [FormController::class, 'form_test_update'])->name('form');
 
 
 Route::group(['prefix' => 'student'], function () {
